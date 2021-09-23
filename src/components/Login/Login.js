@@ -12,18 +12,19 @@ import {
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
-  // const [emailIsValid, setEmailIsValid] = useState();
+ 
   const [enteredPassword, setEnteredPassword] = useState("");
-  //const [passwordIsValid, setPasswordIsValid] = useState();
+  
   const [formIsValid, setFormIsValid] = useState(false);
 
   const stylePaper = {
-    height: "78vh",
-    width: 340,
+    backgroundColor:"white",
+    height: "80vh",
+    width: 400,
     padding: 20,
     margin: "20px auto",
   };
-  const stylegrid = { backgroundColor:'red' };
+  const stylegrid = { backgroundColor:'white' };
   const styleTextField = { margin: "10px 0" };
   const stylebutton = { margin: "8px 0" };
   const styleLink = { margin: "8px 0" };
@@ -44,13 +45,7 @@ const Login = (props) => {
     );
   };
 
-  // const validateEmailHandler = () => {
-  //   setEmailIsValid(enteredEmail.includes('@'));
-  // };
-
-  // const validatePasswordHandler = () => {
-  //   setPasswordIsValid(enteredPassword.trim().length > 6);
-  // };
+  
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -61,7 +56,7 @@ const Login = (props) => {
 
   return (
     <Grid style={stylegrid}>
-      <Paper elevation={10} style={stylePaper}>
+      <Paper elevation={16} style={stylePaper}>
         <Grid align="center">
           <h2>Sign In</h2>
         </Grid>
@@ -72,7 +67,7 @@ const Login = (props) => {
           fullWidth
           required
           onChange={emailChangeHandler}
-          //onBlur={validateEmailHandler}
+          
         />
 
         <TextField
@@ -84,7 +79,7 @@ const Login = (props) => {
           fullWidth
           required
           onChange={passwordChangeHandler}
-          //onBlur={validatePasswordHandler}
+          
         />
         <FormControlLabel label="Remember me" control={<Checkbox />} />
         <Button

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Grid, Typography } from "@mui/material";
 
 import Login from "./components/Login/Login";
@@ -7,12 +7,13 @@ import Home from "./components/Home/Home";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // useEffect(() => {
-  //   const storedUsewrINfo = localStorage.getItem("IsLoggedIn");
-  //   if (storedUsewrINfo === "1") {
-  //     setIsLoggedIn(true);
-  //   }
-  // }, []);
+  
+  useEffect(() => {
+    const storedUsewrINfo = localStorage.getItem("IsLoggedIn");
+    if (storedUsewrINfo === "1") {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const user = {
     Id: "abcd@gmail.com",
